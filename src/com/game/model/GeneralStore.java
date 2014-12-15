@@ -1,5 +1,7 @@
 package com.game.view;
 
+import com.game.view.MenuView;
+
 public class GeneralStore extends MenuView {
     //
     public GeneralStore() {
