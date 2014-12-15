@@ -101,7 +101,8 @@ public class GameMenuView extends MenuView {
     
     private void displayKingdom() {
         Kingdom kingdomView = new Kingdom();
-                kingdomView.display();
+                kingdomView.display();d
+                        
     }
 
     private void displayGeneralStore() {
