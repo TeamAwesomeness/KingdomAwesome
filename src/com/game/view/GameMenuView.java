@@ -1,52 +1,76 @@
-
 package com.game.view;
+
+import com.game.control.GameControl;
+import com.game.control.InventoryControl;
+import com.game.model.Item;
+import com.game.model.Kingdom;
 
 public class GameMenuView extends MenuView {
 
     public GameMenuView() {
         super("\n"
-                + "\n--------------------------------------"
-                + "\n| Game Menu                          |"
-                + "\n--------------------------------------"
-                + "\nV - View map"
-                + "\nI - View Inventory"
-                + "\nH - Get help on how to play the game"
-                + "\nS - Save game"
-                + "\nQ - Quit"
-                + "\n--------------------------------------"
-                + "\n\n* Make your selection");
+                + "\n---------------------------------------"
+                + "\n    Map                               |"
+                + "\n---------------------------------------"
+                + "\n1 - Go to the Kingdom                 |"
+                + "\n2 - Go to the General Store           |"
+                + "\n3 - Go to the Icy Caves               |"
+                + "\n4 - Go to the Fiery Depths            |"
+                + "\n5 - Go to the Spooky Hollow           |"
+                + "\n6 - Inventory                         |"
+                + "\ns - Save                              |"
+                + "\n                                      |"
+                + "\nq - Exit to Main Menu                 |"
+                + "\n--------------------------------------|"
+                + "\n");
     }
-
-    @Override
-    public void doAction(String value) {
-        char selection = value.charAt(0);
-        switch (selection) {
-            case 'V':
-                com.game.KingdomGame.getMapView().display();
-                break;
-            case 'H':
-                com.game.KingdomGame.getHelpMenuView().display();
-                break;
-            case 'I':
-                //Add two options here. One is this.viewInventory() and the other calling PrincessBride.getInventoryQuery().display(), which would provide a for loop inquiring of the user for a specific item to give quantity.
-                System.out.println("\nWould you like to search for an item or see an entire inventory list?");
-                char selection1 = value.charAt(0);
-                switch (selection1) {
-                    case '1':
-                        this.viewInventory();
-                        break;
-                    case '2':
-                        this.getInventoryQuery();
-                        break;
-                }
+    
+    
+    public void doAction(char value) {
+        switch (Character.toLowerCase(value)) {
+            case '1': //Go to the Kingdom
                 
-            case 'S':
-                this.saveGame();
+                this.displayKingdom();
                 break;
-            case 'E':
+                
+            case '2': //Go to the General Store
+                
+                this.displayGeneralStore();
+                break;
+                
+            case '3': //Go to the Icy Caves
+                
+                this.displayDungeon1();
+                break;
+                
+            case '4': //Go to the Fiery Depths
+                
+                this.displayDungeon2();
+                break;
+                
+            case '5': //Go to the Spooky Hollow
+                
+                this.displayDungeon3();
                 return;
+                
+            case '6': //Inventory
+                
+                this.displayInventory();
+                return;
+  
+            case 's': //Save Game
+                
+                System.out.println("Game Saved!");
+                return;
+                
+            case 'q': //Exit to Menu
+                
+                this.displayMenu();
+                return;
+                
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                
+                System.out.println("\n Invalid selection!");
                 break;
         }
     }
@@ -73,6 +97,41 @@ public class GameMenuView extends MenuView {
 
     void getInventoryQuery() {
         System.out.println(" Inventory ");
+    }
+    
+    private void displayKingdom() {
+        Kingdom kingdomView = new Kingdom();
+                kingdomView.display();
+    }
+
+    private void displayGeneralStore() {
+        GeneralStore genStore = new GeneralStore();
+                genStore.display();
+    }
+
+    private void displayDungeon1() {
+        Dungeon1View dungeon1 = new Dungeon1View();
+                dungeon1.display();
+    }
+
+    private void displayDungeon2() {
+        Dungeon2View dungeon2 = new Dungeon2View();
+                dungeon2.display();
+    }
+
+    private void displayDungeon3() {
+        Dungeon3View dungeon3 = new Dungeon3View();
+                dungeon3.display();
+    }
+
+    private void displayInventory() {
+        InventoryControl inventory = new InventoryControl();
+                inventory.display();
+    }
+
+    private void displayMenu() {
+        MenuView Menu = new MenuView();
+                Menu.display();
     }
     
 }
