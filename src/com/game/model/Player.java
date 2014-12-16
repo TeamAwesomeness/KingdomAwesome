@@ -6,7 +6,6 @@ import java.util.Objects;
 public class Player implements Serializable{
     
     private String playerName;
-    private double bestTime;
 
     public Player() {
     }
@@ -15,28 +14,21 @@ public class Player implements Serializable{
         return playerName;
     }
 
+
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
     }
 
-    public double getBestTime() {
-        return bestTime;
-    }
-
-    public void setBestTime(double bestTime) {
-        this.bestTime = bestTime;
-    }
 
     @Override
     public String toString() {
-        return "Player{" + "playerName=" + playerName + ", bestTime=" + bestTime + '}';
+        return "Player{" + "playerName=" + playerName + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 59 * hash + Objects.hashCode(this.playerName);
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
         return hash;
     }
 
@@ -52,9 +44,7 @@ public class Player implements Serializable{
         if (!Objects.equals(this.playerName, other.playerName)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
-            return false;
-        }
         return true;
     }
+
 }

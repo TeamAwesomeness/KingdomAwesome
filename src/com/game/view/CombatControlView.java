@@ -83,8 +83,8 @@ public class CombatControlView {
                     System.out.println("\n\tYou run away from the " + enemy + ", and exit the dungeon!");
                     //continue GAME;
                     //Display the Game Map
-                    GameMapView mapView = new GameMapView();
-                    mapView.display();
+                    GameMenuView mapView = new GameMenuView();
+                        mapView.display();
                 }
                 else {
                     System.out.println("\n\tYou fail. Like death.");
@@ -126,8 +126,8 @@ public class CombatControlView {
             else {
                 System.out.println("\n\tYou exit the dungeon!");
                 //Display the Game Map
-                GameMapView mapView = new GameMapView();
-                mapView.display();
+                GameMenuView mapView = new GameMenuView();
+                    mapView.display();
             }
             
         } //GAME while loop

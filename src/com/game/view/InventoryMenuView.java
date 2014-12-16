@@ -5,45 +5,13 @@ import com.game.model.Game;
 import com.game.model.Item;
 
 public class InventoryMenuView extends MenuView {
-
-    Game game = KingdomGame.getCurrentGame();
-    GameMenuView gameMenuView = new GameMenuView();
-
-    final int BREAD = 1;
-    final int CHICKEN = 0;
-    final int POTION = 0;
-    final int LIFE = 0;
-    //Qued for Found
-    final int SPHERES = 0;
-
-    public void displayMenu() {
-        
-        Item[] inventoryList = game.getInventory();
-        
-        //Items For Sale
-        String breadFood    =   inventoryList[BREAD].getActualAmount() 
-                + " : " 
-                +               inventoryList[BREAD].getRequiredAmount();
-        String chickensFood =   inventoryList[CHICKEN].getActualAmount() 
-                + " : " 
-                +               inventoryList[CHICKEN].getRequiredAmount();
-        String potionsFood  =   inventoryList[POTION].getActualAmount() 
-                + " : " 
-                +               inventoryList[POTION].getRequiredAmount();
-        String lives        =   inventoryList[LIFE].getActualAmount() 
-                + " : " 
-                +               inventoryList[LIFE].getRequiredAmount();
-        
-        //Item Not For Sale
-        String spheres      =   inventoryList[SPHERES].getActualAmount() 
-                + " : " 
-                +               inventoryList[SPHERES].getRequiredAmount();
-
-        System.out.println("\n"
+    
+    public InventoryMenuView(Double spheres, Double xp, Double lives, Double potionsFood, Double chickensFood, Double breadFood, Double lvl) {
+        super("\n"
                 + "\n\t---------------------------------------"
-                + "\n\t-             Inventory               -"
+                + "\n\t             Inventory                 "
                 + "\n\t---------------------------------------"
-                + "\n\t- Level: " + lvl + ""
+                + "\n\t- Level: " + lvl
                 + "\n\t---------------------------------------"
                 + "\n\t1- Moldy Bread: " + breadFood
                 + "\n\t2- Slimy Chicken: " + chickensFood
@@ -57,20 +25,12 @@ public class InventoryMenuView extends MenuView {
                 + "\n\t---------------------------------------"
                 + "\n\t\tUse: ");
     }
+    //Keep For Now
+    public InventoryMenuView() {}
+    
 
-    public void display() {
-        String value = " ";
-        this.displayMenu();
-        value = this.getInput();
-        this.doAction(value);
-    }
-
-
-    @Override
     public void doAction(String value) {
-        
         Item[] inventoryList = game.getInventory();
-        
         switch (value) {
             
             case "1":
@@ -135,7 +95,7 @@ public class InventoryMenuView extends MenuView {
             
             case "q": //Go to the Map
                 
-                GameMapView mapView = new GameMapView();
+                GameMenuView mapView = new GameMenuView();
                 mapView.display();
                 
                 return;
@@ -149,5 +109,38 @@ public class InventoryMenuView extends MenuView {
         }//END switch
         
     }//END doAction
-    
-}//END
+        
+    Game game = KingdomGame.getCurrentGame();
+    GameMenuView gameMenuView = new GameMenuView();
+
+    final int BREAD = 1;
+    final int CHICKEN = 0;
+    final int POTION = 0;
+    final int LIFE = 0;
+    //Qued for Found
+    final int SPHERES = 0;
+
+    public void displayMenu() {
+        
+        Item[] inventoryList = game.getInventory();
+        
+        //Items For Sale
+        String breadFood    =   inventoryList[BREAD].getActualAmount() 
+                + " : " 
+                +               inventoryList[BREAD].getRequiredAmount();
+        String chickensFood =   inventoryList[CHICKEN].getActualAmount() 
+                + " : " 
+                +               inventoryList[CHICKEN].getRequiredAmount();
+        String potionsFood  =   inventoryList[POTION].getActualAmount() 
+                + " : " 
+                +               inventoryList[POTION].getRequiredAmount();
+        String lives        =   inventoryList[LIFE].getActualAmount() 
+                + " : " 
+                +               inventoryList[LIFE].getRequiredAmount();
+        
+        //Item Not For Sale
+        String spheres      =   inventoryList[SPHERES].getActualAmount() 
+                + " : " 
+                +               inventoryList[SPHERES].getRequiredAmount();
+    }
+}

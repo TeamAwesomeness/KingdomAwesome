@@ -1,14 +1,10 @@
 package com.game.view;
 
-import com.game.view.MenuView;
-
 public class GeneralStore extends MenuView {
     //
     public GeneralStore() {
         super("\n"
                 + "\n\t======================================="
-              //+ "\n\t|  XP: " + XP + "                     |"
-              //+ "\n\t======================================="
                 + "\n\t|          The General Store          |"
                 + "\n\t======================================="
                 + "\n\t1 - Moldy Bread               @5XP    |"
@@ -18,38 +14,10 @@ public class GeneralStore extends MenuView {
                 + "\n\t                                      |"
                 + "\n\tq - Exit to Map                       |"
                 + "\n\t=======================================");}
-    /*
-    public Dungeon2View() {
-        super("\n"
-                + "\n\t========================================="
-                + "\n\t=             Fiery Depths              =");
-        CombatControlView startCombat = new CombatControlView();
-        startCombat.startCombat();
-    }
-    */
-    public void display() {
-        String value = " ";
-        this.GeneralStore();
-        value = this.getInput();
-        this.doAction(value);
-    }
-    
-    
-    void display() {
-        char option = ' ';
-        do {            
-            String input = user_input.next();
-            option = input.charAt(0);           
-            
-            this.doAction(option);
-            
-        } while (option != 'q');
-    }
-    
-    private void doAction(char option) {
-        
-        switch(option) {
-            
+
+    public void doAction(String value) {
+        char option = value.charAt(0);
+        switch (option) {
             case '1': //create and start a new game
                 
                 System.out.println("\n\n");
@@ -80,7 +48,7 @@ public class GeneralStore extends MenuView {
                 
             case 'q': //exit to in-game Map View
                 
-                GameMapView mapView = new GameMapView();
+                GameMenuView mapView = new GameMenuView();
                 mapView.display();
                 return;
                 
@@ -91,5 +59,4 @@ public class GeneralStore extends MenuView {
                 
         }
     }
-
 }

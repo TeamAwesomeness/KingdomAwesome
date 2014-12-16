@@ -21,10 +21,8 @@ public class HelpMenuView extends MenuView {
 
     @Override
     public void doAction(String value) {
-
         char option = value.charAt(0);
-        
-        switch(option) {
+        switch (option) {
          
             case '1': //MENU OPTION [1]:: Moving in The Kingdom
                 
@@ -164,10 +162,10 @@ public class HelpMenuView extends MenuView {
                 waitTime(95000);
                 return;
                 
-            case 'q': //MENU OPTION [8]:: GO BACK TO MAIN MENU
+            case 'q': //MENU OPTION [8]:: GO BACK TO MENU
                 
-                MainMenuView mainMenu = new MainMenuView();
-                mainMenu.display();//was displayMenu()
+                MenuView Menu = new MenuView();
+                Menu.display();//was displayMenu()
                 return;
                 
             default:

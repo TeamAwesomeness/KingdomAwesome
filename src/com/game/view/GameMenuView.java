@@ -9,25 +9,25 @@ public class GameMenuView extends MenuView {
 
     public GameMenuView() {
         super("\n"
-                + "\n---------------------------------------"
-                + "\n    Map                               |"
-                + "\n---------------------------------------"
-                + "\n1 - Go to the Kingdom                 |"
-                + "\n2 - Go to the General Store           |"
-                + "\n3 - Go to the Icy Caves               |"
-                + "\n4 - Go to the Fiery Depths            |"
-                + "\n5 - Go to the Spooky Hollow           |"
-                + "\n6 - Inventory                         |"
-                + "\ns - Save                              |"
-                + "\n                                      |"
-                + "\nq - Exit to Main Menu                 |"
-                + "\n--------------------------------------|"
-                + "\n");
-    }
+                + "\n\t---------------------------------------"
+                + "\n\t    Map                               |"
+                + "\n\t---------------------------------------"
+                + "\n\t1 - Go to the Kingdom                 |"
+                + "\n\t2 - Go to the General Store           |"
+                + "\n\t3 - Go to the Icy Caves               |"
+                + "\n\t4 - Go to the Fiery Depths            |"
+                + "\n\t5 - Go to the Spooky Hollow           |"
+                + "\n\t6 - Inventory                         |"
+                + "\n\t                                      |"
+                + "\n\ts - Save                              |"
+                + "\n\tq - Exit to Main Menu                 |"
+                + "\n\t--------------------------------------|"
+                + "\n\t\tUse: ");}
     
     
-    public void doAction(char value) {
-        switch (Character.toLowerCase(value)) {
+    public void doAction(String value) {
+        char option = value.charAt(0);
+        switch (option) {
             case '1': //Go to the Kingdom
                 
                 this.displayKingdom();
@@ -101,8 +101,7 @@ public class GameMenuView extends MenuView {
     
     private void displayKingdom() {
         Kingdom kingdomView = new Kingdom();
-                kingdomView.display();d
-                        
+                kingdomView.display();
     }
 
     private void displayGeneralStore() {

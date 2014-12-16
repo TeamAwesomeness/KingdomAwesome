@@ -9,7 +9,6 @@ import com.game.model.Map;
 
 public class Dungeon3View extends MenuView {
 
-    InventoryMenuView inventoryMenuView = new InventoryMenuView();
     Game game = KingdomGame.getCurrentGame();
     Item[] inventoryList = game.getInventory();
     Map adjustMap = game.getMap();

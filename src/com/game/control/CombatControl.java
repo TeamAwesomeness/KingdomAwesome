@@ -1,6 +1,6 @@
 package com.game.control;
 
-import com.game.view.GameMapView;
+import com.game.view.GameMenuView;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -85,8 +85,8 @@ public class CombatControl {
                     System.out.println("\n\tYou run away from the " + enemy + ", and exit the dungeon!");
                     //continue GAME;
                     //Display the Game Map
-                    GameMapView mapView = new GameMapView();
-                    mapView.display();
+                    GameMenuView mapView = new GameMenuView();
+                        mapView.display();
                 }
                 else {
                     System.out.println("\n\tYou fail. Like death.");
@@ -128,8 +128,8 @@ public class CombatControl {
             else {
                 System.out.println("\n\tYou exit the dungeon!");
                 //Display the Game Map
-                GameMapView mapView = new GameMapView();
-                mapView.display();
+                GameMenuView mapView = new GameMenuView();
+                    mapView.display();
             }
             
         } //GAME while loop

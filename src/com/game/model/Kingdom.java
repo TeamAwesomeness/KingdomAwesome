@@ -1,16 +1,13 @@
 package com.game.model;
 
 import com.game.view.GameMenuView;
-import java.util.Scanner;
-import static com.game.view.LoadNewGame.waitTime;
+import static com.game.view.NewGame.waitTime;
+import com.game.view.MenuView;
 
-public class Kingdom {
-
-        Scanner user_input = new Scanner(System.in);
-        
-        int magicalSphere = 0;
-
-        private final String MENU = "\n"
+public class Kingdom extends MenuView {
+    //
+    public Kingdom() {
+        super("\n"
                 + "\n---------------------------------------"
                 + "\n    Welcome to the Kingdom            |"
                 + "\n---------------------------------------"
@@ -19,25 +16,11 @@ public class Kingdom {
                 + "\n3 - Ask about upgrades                |"
                 + "\n                                      |"
                 + "\nq - Exit to the Map                   |"
-                + "\n---------------------------------------";
+                + "\n---------------------------------------");}
 
-        void display() {
-            char option = ' ';
-            do {
-                System.out.println(MENU);
-
-                String input = user_input.next();
-                option = input.charAt(0);
-
-                this.doAction(option);
-
-            } while (option != 'q'); //THIS NUMBER MUST MATCH THE LAST NUMBER YOU CHOOSE
-        }
-
-
-        private void doAction(char option) {
-
-            switch(option) {
+    public void doAction(String value) {
+        char option = value.charAt(0);
+            switch (option) {
 
                 case '1': //Talk to the King 
 
@@ -88,5 +71,4 @@ public class Kingdom {
 
             }
         }
-
 }
