@@ -7,6 +7,8 @@ import com.game.view.HelpMenuView;
 import com.game.view.InventoryMenuView;
 import com.game.view.MenuView;
 import com.game.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.io.Serializable;
 
 public class KingdomGame implements Serializable {
@@ -61,6 +63,18 @@ public class KingdomGame implements Serializable {
 
     public static InventoryMenuView getInventoryMenuView() {
         return inventory;
+    }
+
+    public static PrintWriter getOutFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static BufferedReader getInFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static PrintWriter getLogFile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

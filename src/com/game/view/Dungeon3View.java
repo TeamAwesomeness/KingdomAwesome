@@ -7,7 +7,7 @@ import com.game.model.Item;
 import com.game.model.Location;
 import com.game.model.Map;
 
-public class Dungeon3View extends MenuView {
+public class Dungeon3View extends View {
 
     Game game = KingdomGame.getCurrentGame();
     Item[] inventoryList = game.getInventory();
@@ -27,6 +27,11 @@ public class Dungeon3View extends MenuView {
                 + "\n\t=            Spooky Hollow              =");
         CombatControlView startCombat = new CombatControlView();
         startCombat.startCombat();
+    }
+
+    @Override
+    public void doAction(String value) {
+
     }
     
 }//END

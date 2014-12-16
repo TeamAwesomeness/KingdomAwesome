@@ -4,9 +4,9 @@ import com.game.KingdomGame;
 import com.game.model.Game;
 import com.game.model.Item;
 
-public class InventoryMenuView extends MenuView {
+public class InventoryMenuView extends View {
     
-    public InventoryMenuView(Double spheres, Double xp, Double lives, Double potionsFood, Double chickensFood, Double breadFood, Double lvl) {
+    public InventoryMenuView() {
         super("\n"
                 + "\n\t---------------------------------------"
                 + "\n\t             Inventory                 "
@@ -25,10 +25,11 @@ public class InventoryMenuView extends MenuView {
                 + "\n\t---------------------------------------"
                 + "\n\t\tUse: ");
     }
-    //Keep For Now
-    public InventoryMenuView() {}
     
 
+    //Double spheres, Double xp, Double lives, Double potionsFood, Double chickensFood, Double breadFood, Double lvl
+
+    @Override
     public void doAction(String value) {
         Item[] inventoryList = game.getInventory();
         switch (value) {

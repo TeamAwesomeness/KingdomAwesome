@@ -17,7 +17,7 @@ public class Kingdom extends MenuView {
                 + "\n                                      |"
                 + "\nq - Exit to the Map                   |"
                 + "\n---------------------------------------");}
-
+    @Override
     public void doAction(String value) {
         char option = value.charAt(0);
             switch (option) {

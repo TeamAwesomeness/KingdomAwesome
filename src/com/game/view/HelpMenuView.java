@@ -1,9 +1,9 @@
 package com.game.view;
 
-public class HelpMenuView extends MenuView {
+public class HelpMenuView extends View {
 
     public HelpMenuView() {
-        super("\n\t"
+        super("\n"
             + "\n\t---------------------------------------"
             + "\n\t|            Help Menu                |"
             + "\n\t---------------------------------------"

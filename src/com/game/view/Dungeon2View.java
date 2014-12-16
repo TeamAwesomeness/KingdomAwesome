@@ -7,7 +7,7 @@ import com.game.model.Item;
 import com.game.model.Location;
 import com.game.model.Map;
 
-public class Dungeon2View extends MenuView {
+public class Dungeon2View extends View {
 
     Game game = KingdomGame.getCurrentGame();
     Item[] inventoryList = game.getInventory();
@@ -27,6 +27,11 @@ public class Dungeon2View extends MenuView {
                 + "\n\t=             Fiery Depths              =");
         CombatControlView startCombat = new CombatControlView();
         startCombat.startCombat();
+    }
+
+    @Override
+    public void doAction(String value) {
+
     }
     
 }//END

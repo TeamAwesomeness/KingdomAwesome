@@ -14,7 +14,7 @@ public class GeneralStore extends MenuView {
                 + "\n\t                                      |"
                 + "\n\tq - Exit to Map                       |"
                 + "\n\t=======================================");}
-
+    @Override
     public void doAction(String value) {
         char option = value.charAt(0);
         switch (option) {

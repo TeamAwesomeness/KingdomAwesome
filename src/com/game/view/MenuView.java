@@ -2,7 +2,7 @@ package com.game.view;
 
 import static com.game.view.NewGame.waitTime;
 
-public class MenuView implements ViewInterface {
+public class MenuView extends View {
     public MenuView() {
         super("\n"
                 + "\n\t---------------------------------------"
@@ -17,6 +17,7 @@ public class MenuView implements ViewInterface {
                 + "\n\tq - Exit to Desktop                   |"
                 + "\n\t---------------------------------------");}
     
+    @Override
     public void doAction(String value) {
         char option = value.charAt(0);
         switch (option) {

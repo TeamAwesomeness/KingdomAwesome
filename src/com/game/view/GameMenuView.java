@@ -5,7 +5,7 @@ import com.game.control.InventoryControl;
 import com.game.model.Item;
 import com.game.model.Kingdom;
 
-public class GameMenuView extends MenuView {
+public class GameMenuView extends View {
 
     public GameMenuView() {
         super("\n"
@@ -24,7 +24,7 @@ public class GameMenuView extends MenuView {
                 + "\n\t--------------------------------------|"
                 + "\n\t\tUse: ");}
     
-    
+    @Override
     public void doAction(String value) {
         char option = value.charAt(0);
         switch (option) {
@@ -128,8 +128,8 @@ public class GameMenuView extends MenuView {
         InventoryControl inventory = new InventoryControl();
                 inventory.display();
     }
-
-    private void displayMenu() {
+    @Override
+    public void displayMenu() {
         MenuView Menu = new MenuView();
                 Menu.display();
     }
