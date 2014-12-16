@@ -7,19 +7,19 @@ import com.game.model.Item;
 public class InventoryMenuView extends View {
     
     public InventoryMenuView() {
-        super("\n"
+        super("\n" 
                 + "\n\t---------------------------------------"
                 + "\n\t             Inventory                 "
                 + "\n\t---------------------------------------"
-                + "\n\t- Level: " + lvl
+                + "\n\t- Level: " 
                 + "\n\t---------------------------------------"
-                + "\n\t1- Moldy Bread: " + breadFood
-                + "\n\t2- Slimy Chicken: " + chickensFood
-                + "\n\t3- Potion of Health: " + potionsFood
-                + "\n\t4- Extra Lives: " + lives
+                + "\n\t1- Moldy Bread: " 
+                + "\n\t2- Slimy Chicken: " 
+                + "\n\t3- Potion of Health: "
+                + "\n\t4- Extra Lives: " 
                 + "\n\t---------------------------------------"
-                + "\n\t- Experience: " + xp
-                + "\n\t- Magical Spheres: " + spheres
+                + "\n\t- Experience: " 
+                + "\n\t- Magical Spheres: "
                 + "\n\t---------------------------------------"
                 + "\n\tq - Go to the Map                     |"
                 + "\n\t---------------------------------------"

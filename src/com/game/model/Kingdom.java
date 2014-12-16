@@ -2,9 +2,9 @@ package com.game.model;
 
 import com.game.view.GameMenuView;
 import static com.game.view.NewGame.waitTime;
-import com.game.view.MenuView;
+import com.game.view.View;
 
-public class Kingdom extends MenuView {
+public class Kingdom extends View {
     //
     public Kingdom() {
         super("\n"
@@ -17,6 +17,7 @@ public class Kingdom extends MenuView {
                 + "\n                                      |"
                 + "\nq - Exit to the Map                   |"
                 + "\n---------------------------------------");}
+    
     @Override
     public void doAction(String value) {
         char option = value.charAt(0);

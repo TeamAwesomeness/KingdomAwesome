@@ -1,6 +1,6 @@
 package com.game.view;
 
-public class GeneralStore extends MenuView {
+public class GeneralStore extends View {
     //
     public GeneralStore() {
         super("\n"
