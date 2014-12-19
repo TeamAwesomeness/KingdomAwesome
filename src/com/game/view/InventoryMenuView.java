@@ -144,4 +144,9 @@ public class InventoryMenuView extends View {
                 + " : " 
                 +               inventoryList[SPHERES].getRequiredAmount();
     }
+
+    @Override
+    public String getInput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

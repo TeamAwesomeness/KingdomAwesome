@@ -128,10 +128,15 @@ public class GameMenuView extends View {
         InventoryControl inventory = new InventoryControl();
                 inventory.display();
     }
-    @Override
+
     public void displayMenu() {
         MenuView Menu = new MenuView();
                 Menu.display();
+    }
+
+    @Override
+    public String getInput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

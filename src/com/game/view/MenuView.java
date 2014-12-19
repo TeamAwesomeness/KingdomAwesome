@@ -17,9 +17,8 @@ public class MenuView extends View {
                 + "\n\tq - Exit to Desktop                   |"
                 + "\n\t---------------------------------------");}
     
-    @Override
-    public void doAction(String value) {
-        char option = value.charAt(0);
+    public void doAction(char option) {
+        //char option = value.charAt(0);
         switch (option) {
             case '1': //create and start a new game
                 
@@ -48,8 +47,6 @@ public class MenuView extends View {
                 
             case 'q': //exit the game
                 
-                System.out.println("Thanks for playing!");
-                waitTime(25000);
                 exitGame();
                 return;
                 
@@ -87,18 +84,20 @@ public class MenuView extends View {
     }
 
     private void exitGame() {
+        System.out.println("Thanks for playing! Want to see more? Visit SilverOasis.US!");
+        waitTime(25000);
         System.exit(0);
     }
 
     @Override
-    public void display() {
-        
+    public String getInput() {
+        System.out.println("*** string getInput ***");
+        return null;
     }
 
     @Override
-    public String getInput() {
-        return null;
-        
+    public void doAction(String value) {
+        System.out.println("*** doAction ***");
     }
     
 }//END

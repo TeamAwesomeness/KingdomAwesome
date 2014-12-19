@@ -33,5 +33,10 @@ public class Dungeon1View extends View {
     public void doAction(String value) {
 
     }
+
+    @Override
+    public String getInput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }//END
