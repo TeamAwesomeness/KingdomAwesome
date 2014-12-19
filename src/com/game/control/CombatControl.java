@@ -21,8 +21,10 @@ public class CombatControl {
         int health = 100;       //Health of Hero
         int attackDamage = 50;  //Attack damage of Hero
         int numHealthPots = 3;  //Number of Healthpots our Hero starts out with
+        int numMagicalSpheres = 0;  //Number of Magical Spheres our Hero starts out with
         int healthPotionHealAmount = 30; //Health Potion Max Heal Amount
         int healthPotionDropChance = 50; //Percentage! Health Potion Drop Chance from Enemy
+        int magicalSpheresDropChance = 1; //Percentage! Magical Spheres Drop Chance from Enemy
         
         boolean running = true; //condition for a while loop
         
@@ -108,6 +110,12 @@ public class CombatControl {
                 numHealthPots++;
                 System.out.println("\n\t# The " + enemy + " dropped a health potion! # ");
                 System.out.println("\n\t# You now have " + numHealthPots + " health potion(s). # ");
+            }
+            //Install Random Drop Chance in percentage (magical sphere)
+            if(rand.nextInt(100) < magicalSpheresDropChance) {
+                numMagicalSpheres++;
+                System.out.println("\n\t# The " + enemy + " dropped a Magical Sphere! # ");
+                System.out.println("\n\t# You now have " + numMagicalSpheres + " Magical Sphere(s). # ");
             }
             System.out.println("\n\t=======================================");
             System.out.println("\n\tWhat would you like to do now?");
